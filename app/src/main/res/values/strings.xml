@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ThePugFamilly</string>
     <string name="greeting_text">Hello, how are you %1$s!</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="title_activity_products">ProductsActivity</string>
 </resources>

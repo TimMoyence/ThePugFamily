@@ -1,21 +1,19 @@
 package com.asilidesign.thepugfamilly
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.asilidesign.thepugfamilly.ui.theme.ThePugFamillyTheme
@@ -27,11 +25,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             ThePugFamillyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Tim",
+                    HomeScreen(
                         modifier = Modifier
                             .padding(innerPadding)
-                            .fillMaxSize()
+                            .fillMaxSize(),
+                        onInfoClick = {
+                            startActivity(Intent(this, InfoActivity::class.java))
+                        },
+                        onProductsClick = {
+                            startActivity(Intent(this, ProductsActivity::class.java))
+                        }
                     )
                 }
             }
@@ -40,38 +43,54 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    val configuration = LocalConfiguration.current
-    val greetingText = context.getString(R.string.greeting_text, name)
-    val screenWidth = configuration.screenWidthDp.dp
-
-    val fontSize = when {
-        screenWidth < 360.dp -> 14.sp
-        screenWidth < 480.dp -> 18.sp
-        else -> 24.sp
-    }
-
-    Column {
+fun HomeScreen(
+    modifier: Modifier = Modifier,
+    onInfoClick: () -> Unit,
+    onProductsClick: () -> Unit
+) {
+    Column(
+        modifier = modifier.padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly
+    ) {
         Text(
-            text = greetingText,
-            modifier = modifier.padding(16.dp),
-            fontSize = fontSize
+            text = "Home",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
         )
 
-        Image(
-            painter = painterResource(R.drawable.screenshot_2025_05_05_at_16_22_15),
-            contentDescription = "screenshot",
-            modifier = Modifier.padding(16.dp)
-        )
-    }
-}
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .height(50.dp),
+            shape = RoundedCornerShape(4.dp),
+            border = BorderStroke(1.dp, Color.Black)
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Text("Epsi", fontSize = 18.sp)
+            }
+        }
 
+        Spacer(modifier = Modifier.height(32.dp))
 
-@Preview(showBackground = true, showSystemUi = true, device = "spec:width=411dp,height=891dp")
-@Composable
-fun GreetingPreview() {
-    ThePugFamillyTheme {
-        Greeting("Tim")
+        Button(
+            onClick = onInfoClick,
+            modifier = Modifier
+                .size(120.dp),
+            shape = RoundedCornerShape(4.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
+        ) {
+            Text("Info", fontWeight = FontWeight.Bold)
+        }
+
+        Button(
+            onClick = onProductsClick,
+            modifier = Modifier
+                .size(120.dp),
+            shape = RoundedCornerShape(4.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
+        ) {
+            Text("Products", fontWeight = FontWeight.Bold)
+        }
     }
 }
