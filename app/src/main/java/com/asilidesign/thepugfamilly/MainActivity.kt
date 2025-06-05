@@ -13,6 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,49 +52,56 @@ fun HomeScreen(
     onInfoClick: () -> Unit,
     onProductsClick: () -> Unit
 ) {
-    Column(
-        modifier = modifier.padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly
-    ) {
-        Text(
-            text = "Home",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold
-        )
+    val blackColor = colorResource(id = R.color.black)
 
+    Column(
+        modifier = modifier
+            .padding(horizontal = 24.dp, vertical = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
         Surface(
             modifier = Modifier
-                .fillMaxWidth(0.8f)
+                .fillMaxWidth()
                 .height(50.dp),
-            shape = RoundedCornerShape(4.dp),
-            border = BorderStroke(1.dp, Color.Black)
+            shape = RoundedCornerShape(8.dp),
+            border = BorderStroke(1.dp, blackColor),
+            color = Color.Transparent
         ) {
             Box(contentAlignment = Alignment.Center) {
-                Text("Epsi", fontSize = 18.sp)
+                Text("Epsi", fontSize = 18.sp, fontWeight = FontWeight.Medium)
             }
         }
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(48.dp))
 
-        Button(
-            onClick = onInfoClick,
-            modifier = Modifier
-                .size(120.dp),
-            shape = RoundedCornerShape(4.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
+        Column(
+            verticalArrangement = Arrangement.spacedBy(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Info", fontWeight = FontWeight.Bold)
+            Button(
+                onClick = onInfoClick,
+                modifier = Modifier
+                    .width(160.dp)
+                    .height(60.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE0E0E0))
+            ) {
+                Text("Info", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            }
+
+            Button(
+                onClick = onProductsClick,
+                modifier = Modifier
+                    .width(160.dp)
+                    .height(60.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE0E0E0))
+            ) {
+                Text("Products", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            }
         }
 
-        Button(
-            onClick = onProductsClick,
-            modifier = Modifier
-                .size(120.dp),
-            shape = RoundedCornerShape(4.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
-        ) {
-            Text("Products", fontWeight = FontWeight.Bold)
-        }
+        Spacer(modifier = Modifier.height(48.dp))
     }
 }
