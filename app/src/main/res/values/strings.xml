@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ThePugFamilly</string>
+    <string name="greeting_text">Hello, how are you %1$s!</string>
+</resources>
