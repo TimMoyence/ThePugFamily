@@ -1,4 +1,4 @@
-package com.asilidesign.thepugfamilly
+package com.asilidesign.thepugfamilly.features.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,11 +14,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.asilidesign.thepugfamilly.ui.theme.ThePugFamillyTheme
+import com.asilidesign.thepugfamilly.core.theme.ui.theme.ThePugFamillyTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.asilidesign.thepugfamilly.MainActivity
+import com.asilidesign.thepugfamilly.R
 
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

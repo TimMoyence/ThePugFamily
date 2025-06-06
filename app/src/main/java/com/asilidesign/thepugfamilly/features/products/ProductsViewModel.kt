@@ -1,6 +1,9 @@
+package com.asilidesign.thepugfamilly.features.products
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.asilidesign.thepugfamilly.Category
+import com.asilidesign.thepugfamilly.core.model.Category
+import com.asilidesign.thepugfamilly.core.network.RetrofitInstance
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

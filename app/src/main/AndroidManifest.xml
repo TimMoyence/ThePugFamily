@@ -15,42 +15,32 @@
         android:theme="@style/Theme.ThePugFamilly"
         tools:targetApi="31">
         <activity
-            android:name=".Product"
+            android:name=".features.products.ProductDetailActivity"
             android:exported="false"
-            android:label="@string/title_activity_product"
+            android:label="@string/title_activity_product_detail"
             android:theme="@style/Theme.ThePugFamilly" />
         <activity
-            android:name=".RetrofitInstance"
+            android:name=".features.products.ProductListActivity"
             android:exported="false"
-            android:label="@string/title_activity_retrofit_instance"
+            android:label="@string/title_activity_product_list"
             android:theme="@style/Theme.ThePugFamilly" />
         <activity
-            android:name=".ApiService"
-            android:exported="false"
-            android:label="@string/title_activity_api_service"
-            android:theme="@style/Theme.ThePugFamilly" />
-        <activity
-            android:name=".StudentDetailActivity"
+            android:name=".features.info.StudentDetailActivity"
             android:exported="false"
             android:label="@string/title_activity_student_detail"
             android:theme="@style/Theme.ThePugFamilly" />
         <activity
-            android:name=".ProductsActivity"
+            android:name=".features.products.ProductsActivity"
             android:exported="false"
             android:label="@string/title_activity_products"
             android:theme="@style/Theme.ThePugFamilly" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".features.info.InfoActivity"
             android:exported="false"
             android:label="@string/title_activity_info"
             android:theme="@style/Theme.ThePugFamilly" />
         <activity
-            android:name=".ImageActivity"
-            android:exported="false"
-            android:label="@string/title_activity_image"
-            android:theme="@style/Theme.ThePugFamilly" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".features.splash.SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"
             android:theme="@style/Theme.ThePugFamilly">

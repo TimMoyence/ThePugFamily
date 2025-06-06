@@ -9,4 +9,6 @@
     <string name="title_activity_api_service">ApiService</string>
     <string name="title_activity_retrofit_instance">RetrofitInstance</string>
     <string name="title_activity_product">Product</string>
+    <string name="title_activity_product_list">ProductListActivity</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
 </resources>
