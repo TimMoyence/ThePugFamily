@@ -6,4 +6,7 @@
     <string name="title_activity_info">InfoActivity</string>
     <string name="title_activity_products">ProductsActivity</string>
     <string name="title_activity_student_detail">StudentDetailActivity</string>
+    <string name="title_activity_api_service">ApiService</string>
+    <string name="title_activity_retrofit_instance">RetrofitInstance</string>
+    <string name="title_activity_product">Product</string>
 </resources>

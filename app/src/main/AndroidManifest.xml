@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ThePugFamilly"
         tools:targetApi="31">
+        <activity
+            android:name=".Product"
+            android:exported="false"
+            android:label="@string/title_activity_product"
+            android:theme="@style/Theme.ThePugFamilly" />
+        <activity
+            android:name=".RetrofitInstance"
+            android:exported="false"
+            android:label="@string/title_activity_retrofit_instance"
+            android:theme="@style/Theme.ThePugFamilly" />
+        <activity
+            android:name=".ApiService"
+            android:exported="false"
+            android:label="@string/title_activity_api_service"
+            android:theme="@style/Theme.ThePugFamilly" />
         <activity
             android:name=".StudentDetailActivity"
             android:exported="false"
